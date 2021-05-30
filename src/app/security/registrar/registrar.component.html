@@ -1,0 +1,105 @@
+<section>
+  <form
+    fxLayout="column"
+    fxLayoutAlign="center center"
+    #f="ngForm"
+    (ngSubmit)="agregarUsuario(f)"
+    fxLayoutGap="10px"
+  >
+    <mat-form-field>
+      <mat-label>Nombre</mat-label>
+      <input
+        type="text"
+        matInput
+        placeholder="Su nombre"
+        autocomplete="off"
+        ngModel
+        name="nombre"
+        required
+        #nombre="ngModel"
+      />
+      <mat-error *ngIf="emailInput.hasError('required')"
+        >El nombre es requerido</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Apellido</mat-label>
+      <input
+        type="text"
+        matInput
+        placeholder="Su apellido"
+        autocomplete="off"
+        ngModel
+        name="apellido"
+        required
+        #apellido="ngModel"
+      />
+      <mat-error *ngIf="apellido.hasError('required')"
+        >El apellido es requerido</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Nombre de usuario</mat-label>
+      <input
+        type="text"
+        matInput
+        placeholder="Usuario"
+        autocomplete="off"
+        ngModel
+        name="userName"
+        required
+        #userName="ngModel"
+      />
+      <mat-error *ngIf="userName.hasError('required')"
+        >El nombre de usuario es requerido</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Ingresa E-mail</mat-label>
+      <input
+        type="email"
+        matInput
+        placeholder="Ej. aviv@mail.com"
+        autocomplete="off"
+        ngModel
+        name="mail"
+        email
+        required
+        #emailInput="ngModel"
+      />
+      <mat-error *ngIf="emailInput.hasError('required')"
+        >El coreo es requerido</mat-error
+      >
+      <mat-error *ngIf="!emailInput.hasError('required')"
+        >Ingrese un correo valido</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field hintLabel="El password requiere 7 caracteres como minimo">
+      <mat-label>Ingresa Contraseña</mat-label>
+      <input
+        type="password"
+        matInput
+        autocomplete="off"
+        ngModel
+        name="password"
+        required
+        minlength="7"
+        #pass="ngModel"
+      />
+      <mat-error>El password requiere 7 caracteres como minimo</mat-error>
+    </mat-form-field>
+
+    <button
+      [disabled]="f.invalid"
+      type="submit"
+      mat-raised-button
+      color="primary"
+    >
+      <span class="material-icons">account_circle</span> Ingresar
+    </button>
+  </form>
+</section>
