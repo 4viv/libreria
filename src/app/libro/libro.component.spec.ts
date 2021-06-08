@@ -8,9 +8,9 @@ describe('LibroComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LibroComponent ]
+      declarations: [LibroComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
