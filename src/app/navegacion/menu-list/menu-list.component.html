@@ -9,6 +9,15 @@
     <span>Inicio</span>
   </a>
   <a
+    *ngIf="estadoUsuario"
+    mat-list-item
+    routerLink="books"
+    (click)="onMenuToggleDispatch()"
+  >
+    <mat-icon class="list-menu-item"></mat-icon>
+    <span>Lista de libros</span>
+  </a>
+  <a
     *ngIf="!estadoUsuario"
     mat-list-item
     routerLink="registrar"

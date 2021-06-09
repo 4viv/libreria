@@ -9,7 +9,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   { path: '', component: InicioComponent, canActivate: [RouterGuard] },
-  { path: 'books', component: BooksComponent },
+  { path: 'books', component: BooksComponent, canActivate: [RouterGuard] },
   { path: 'registrar', component: RegistrarComponent },
   { path: 'login', component: LoginComponent },
   { path: '**', redirectTo: 'login', pathMatch: 'full' }
