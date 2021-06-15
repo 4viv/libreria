@@ -3,7 +3,9 @@ import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { Books } from './books';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
-import { MatPaginator, MatPaginatorIntl } from '@angular/material/paginator';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatDialog } from '@angular/material/dialog';
+import { BookNuevoComponent } from './book-nuevo.component';
 
 
 @Component({
@@ -21,7 +23,7 @@ export class BooksComponent implements OnInit, AfterViewInit {
   //@ViewChild(MatPaginator) paginator: MatPaginator = new MatPaginator(new MatPaginatorIntl(), ChangeDetectorRef.prototype);
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor(private bookService: BooksService) {
+  constructor(private bookService: BooksService, private dialog: MatDialog) {
 
   }
 
@@ -39,6 +41,10 @@ export class BooksComponent implements OnInit, AfterViewInit {
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
+  abrirDialogo() {
+    this.dialog.open(BookNuevoComponent);
   }
 
 }

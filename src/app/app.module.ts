@@ -18,6 +18,7 @@ import { SidenavComponent } from './sidenav/sidenav.component';
 import { BarraComponent } from './navegacion/barra/barra.component';
 import { MenuListComponent } from './navegacion/menu-list/menu-list.component';
 import { BooksComponent } from './books/books.component';
+import { BookNuevoComponent } from './books/book-nuevo.component';
 
 
 
@@ -32,7 +33,8 @@ import { BooksComponent } from './books/books.component';
     SidenavComponent,
     BarraComponent,
     MenuListComponent,
-    BooksComponent
+    BooksComponent,
+    BookNuevoComponent
   ],
   imports: [
     BrowserModule,
